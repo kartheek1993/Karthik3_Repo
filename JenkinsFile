@@ -13,11 +13,11 @@ node(){
     }
     stage("Tagging"){
         if (isUnix()) {
-            sh """git tag -a v"""+BUILD_NUMBER+""" -m "my tag"
-            git push"""
+            sh """git tag v"""+BUILD_NUMBER
+            sh """git push --tags"""
          } else {
-            bat """git tag -a v"""+BUILD_NUMBER+""" -m "my tag"
-            git push"""
+            bat """git tag v"""+BUILD_NUMBER
+            bat """git push --tags"""
          }
     }
 }
