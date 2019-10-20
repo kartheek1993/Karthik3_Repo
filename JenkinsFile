@@ -11,17 +11,4 @@ node(){
          }
         
     }
-    stage("Tagging"){
-    withCredentials([usernamePassword(credentialsId: '2952d529-25b2-4c1f-b4aa-e98395894889', passwordVariable: 'gitPass', usernameVariable: 'gitUser')]) {
-    
-        if (isUnix()) {
-            sh """git tag v"""+BUILD_NUMBER
-            sh """git push --tags https://${gitUser}:${gitPass}@github.com/kartheek1993/Karthik3_Repo.git"""
-         } else {
-            bat """git tag v"""+BUILD_NUMBER
-            bat """git push --tags https://"""+gitUser+""":"""+gitPass+"""@github.com/kartheek1993/Karthik3_Repo.git"""
-         }
-         // some block
-}
-    }
 }
