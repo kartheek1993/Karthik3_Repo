@@ -1,1 +1,1 @@
-print ("hello world naveen and kar 5667777")
+print ("hello world naveen and karthik")
