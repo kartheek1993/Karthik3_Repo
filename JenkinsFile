@@ -20,22 +20,6 @@ node(){
 		app = docker.build1("karthik/dockerapp")
 	}
 	
-	stage ("Test Image)
-	{
-		app.inside{
-		echo "Tests passes"
-		}
-	}
-	 stage ("Push Image")
-	 {
-	 
-		docker.withRegistry("https://registry.docker.com, 'docker-hub')
-		{
-			app.push("${env.BUILD_NUMBER}")
-			app.push("latest")
-		}
-		
-		echo "Trying to push docker build to dockerHub"
-	}
+	
 }
 
