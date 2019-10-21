@@ -17,7 +17,7 @@ node(){
 	
 	stage ("Build Image")
 	{
-		app = docker.build1("karthik/dockerapp")
+		app = docker.build("karthik1993/dockerapp")
 	}
 	
 	
